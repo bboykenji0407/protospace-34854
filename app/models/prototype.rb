@@ -1,7 +1,7 @@
 class Prototype < ApplicationRecord
   #has_many :prototype_users
   #has_many :users, through: prototype_users
-  has_many :comments
+  has_many :comments, foreign_key: "prototype_id", dependent: :destroy
   belongs_to :user
   has_one_attached :image
 
